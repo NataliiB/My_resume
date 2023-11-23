@@ -1,0 +1,105 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    padding: 0px 10px;
+    position: relative;
+    z-index: 1
+  }
+  .navbar ul {
+    display: flex;
+    
+    align-items: center;
+  }
+  .navbar ul li{
+    list-style: none;
+    
+  }
+  .navbar ul li{
+    display:flex
+  }
+  .hamburger-menu{
+   display:none;
+   position: relative;
+   z-index: 50;
+   align-items: center;
+   justify-content: flex-end;
+   width: 30px;
+   height: 18px;
+  }
+  .hamburger-menu span {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(13, 43, 13);
+    transform: scale(1);
+  }
+  .hamburger-menu::before, .hamburger-menu::after{
+    content: ' ';
+    position:absolute;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(13, 43, 13);
+    transition: all 0.3s ease 0s
+  
+  }
+  .hamburger-menu::before {
+    top: 0;
+  }
+  .hamburger-menu::after {
+    bottom: 0;
+  }
+  .hamburger-menu.active span {
+    transform: scale(0);
+  }
+  .hamburger-menu.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0,-50%);
+  }
+  .hamburger-menu.active::after{
+    top: 50%;
+    transform: rotate(45deg) translate(0,50%);
+  }
+  .navbar ul li a {
+  padding:10px 15px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: rgb(13, 43, 13);
+  text-decoration: none;
+  }
+  .navbar ul li a:hover {
+    background-color: rgb(26, 26, 86);
+    color: #fff;
+  }
+
+@media (max-width:900px) {
+    .hamburger-menu {
+      display:flex;
+    }
+    .navbar ul{
+      display: none;
+  
+    }
+    .navbar ul {
+      flex-direction: column;
+      row-gap:30px
+    }
+    .navbar.open ul{
+      display: flex!important;
+      position: fixed;
+      overflow-y: auto;
+      flex-direction: column;
+      width: 100%;
+      height:100%;
+      padding: 50px 40px;
+      z-index: 50;
+      top: 0;bottom: 0;left: 0;right: 0;
+      animation: hamburgerAnimation 0.4s;
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8));
+    }
+  }
+  @keyframes hamburgerAnimation {
+    from {opacity: 0;}
+    to {opacity:1}
+  }
