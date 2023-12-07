@@ -1,0 +1,14 @@
+.navbarColumn {
+    display: flex;
+    position: fixed;
+    overflow-y: auto;
+    flex-direction: column;
+    width: 100%;
+    height:100%;
+    padding: 50px 40px;
+    z-index: 50;
+    top: 0;bottom: 0;left: 0;right: 0;
+    animation: hamburgerAnimation 0.4s;
+    background: linear-gradient(rgba(255, 255))
+  }
+  

@@ -1,17 +1,30 @@
 .contacts{
-    display: none;
+  display:flex;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.5rem;
+  color: rgb(63, 60, 60);
+  backdrop-filter: blur(7px);
   }
-  .contacts.active{
-    display:flex;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 2.5rem;
-    color: rgb(63, 60, 60);
-  }
+.contacts ul li a {
+  text-decoration: none;
+  color: rgb(13, 43, 13);
+  cursor: pointer;
+}
+.contacts ul li {
+list-style-type: none;
+}
+.icons {
+  width: 2rem;
+  height: 2rem;
+}
+.contacts h2 {
+  padding-bottom: 3rem;
+}

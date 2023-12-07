@@ -1,18 +1,30 @@
 import "./Contacts.css";
+import { FaTelegram } from "react-icons/fa6";
+import { FaSkype } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { IoCall } from "react-icons/io5";
+import { MdLocalPostOffice } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
+import ReturnBtn from "../ReturnBtn/ReturnBtn";
+
+
 
 export default function Contacts() {
   return (
     <div className="contacts">
+      <ReturnBtn/>
       <h2>Contacts</h2>
       <ul>
         <li>
-          <a href="#">+380988837808, +4916091484710</a>
+          <a href="tel:+380988837808"><FaTelegram/><FaSkype/><IoLogoWhatsapp/>+380988837808</a>
+          
+        </li>
+        <li><a href="tel:+4916091484710">< IoCall/>+4916091484710</a></li>
+        <li>
+          <a href="mailto:nataliibondarenko@ukr.net"><MdLocalPostOffice/>nataliibondarenko@ukr.net</a>
         </li>
         <li>
-          <a href="#">nataliibondarenko@ukr.net</a>
-        </li>
-        <li>
-          <a href="#">Linkedin</a>
+          <a href="https://www.linkedin.com/in/nataliia-bond/"><FaLinkedin/>Linkedin</a>
         </li>
       </ul>
     </div>
