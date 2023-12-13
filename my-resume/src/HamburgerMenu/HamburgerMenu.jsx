@@ -1,57 +1,49 @@
+import React from "react";
 import { useState } from "react";
 import "./HamburgerMenu.css";
 import { Link, Outlet } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
+
 export default function HamburgerMenu(props) {
-
-
   return (
     <>
-      <nav className="navbarColumn">
-        <ul>
-          <li>
-            {" "}
-            <Link to="/">
-              <button onClick={()=>{props.setHidingBurger(false)}}>Main page</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/my_hard_skills">
-              <button onClick={()=>{props.setHidingBurger(false)}}>
-                Hard skills
-              </button>
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link to="/my_soft_skills" className="soft-skills-btn">
-              <button onClick={()=>{props.setHidingBurger(false)}}>
-                Soft skills
-              </button>
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link to="/projects" className="projects-btn">
-              <button onClick={()=>{props.setHidingBurger(false)}}>
-                Projects
-              </button>
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link to="/my_contacts" className="contacts-btn">
-              <button onClick={()=>{props.setHidingBurger(false)}}>
-                Contacts
-              </button>
-            </Link>
-          </li>
-        </ul>
-
-        <Outlet />
-      </nav>
-
-      
-      
+      <div >
+        <Menu  pageWrapId={props.pageWrapId} outerContainerId={props.outerContainerId}  right>
+          
+            <ul className="hamburger-list">
+              <li>
+                {" "}
+                <Link to="/">
+                  <button className="skills-btn">Main page</button>
+                </Link>
+              </li>
+              <li>
+                <Link to="/my_hard_skills">
+                  <button className="skills-btn">Hard skills</button>
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/my_soft_skills">
+                  <button  className="skills-btn">Soft skills</button>
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/projects">
+                  <button className="skills-btn">Projects</button>
+                </Link>
+              </li>
+              <li>
+                {" "}
+                <Link to="/my_contacts">
+                  <button  className="skills-btn">Contacts</button>
+                </Link>
+              </li>
+            </ul>
+          
+        </Menu>
+      </div>
     </>
   );
 }

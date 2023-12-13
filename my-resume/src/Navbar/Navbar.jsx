@@ -1,25 +1,31 @@
+import React from "react";
 import { useState } from "react";
 import "./Navbar.css";
 import { Link, Outlet } from "react-router-dom";
 import { GiEcology } from "react-icons/gi";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 export default function Navbar(props) {
   const [isActive, setIsActive] = useState(false);
-  const [isPushed, setIsPushed] = useState(false);
-  let hamburgerDesign = "hamburger-menu"
-  if(!isPushed){hamburgerDesign="hamburger-menu"}else if (!props.hidingBurger){hamburgerDesign="hamburger-menu hided"}else {hamburgerDesign="hamburger-menu active"
- 
+  const [isPushed, setIsPushed] = useState(true);
+  // let hamburgerDesign = "hamburger-menu"
+  // if(!isPushed){hamburgerDesign="hamburger-menu"}else if (!props.hidingBurger){hamburgerDesign="hamburger-menu hided"}else {hamburgerDesign="hamburger-menu"}
+
   return (
     <>
-      <h1><GiEcology/>Natalia Bondarenko</h1>
+      <h1>
+        <GiEcology />
+        Natalia Bondarenko
+      </h1>
       <nav className="navbar">
         <ul>
           <li>
             {" "}
             <Link to="/">
               <button
-                onClick={()=>{
-                  setIsActive(false)}}
+                onClick={() => {
+                  setIsActive(false);
+                }}
                 className={isActive ? "contacts-btn" : "contacts-btn-block"}
               >
                 Main page
@@ -27,11 +33,12 @@ export default function Navbar(props) {
             </Link>
           </li>
           <li>
-            <Link to="/my_hard_skills" >
+            <Link to="/my_hard_skills">
               <button
                 onClick={() => {
                   setIsActive(true);
-                }} className="hard-skills-btn"
+                }}
+                className="hard-skills-btn"
               >
                 Hard skills
               </button>
@@ -74,16 +81,11 @@ export default function Navbar(props) {
             </Link>
           </li>
         </ul>
-
-        <Link to="/menu"><div className={{hamburgerDesign}}>
-      
-          <span></span>
-        </div>
-        </Link>
-        <Outlet />
-
+        <HamburgerMenu
+          pageWrapId={props.pageWrapId}
+          outerContainerId={props.outerContainerId}
+        />
       </nav>
     </>
   );
-}
 }

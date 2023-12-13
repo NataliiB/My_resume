@@ -1,3 +1,4 @@
+import React  from 'react';
 import "./HardSkills.css";
 import ReturnBtn from "../ReturnBtn/ReturnBtn";
 
@@ -5,7 +6,7 @@ export default function HardSkills() {
   return (
     <div className="hard-skills">
       <h2>Hard skills</h2>
-      <ReturnBtn/>
+     
       <ul>
         <li>JS</li>
         <li>HTML</li>

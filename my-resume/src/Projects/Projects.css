@@ -16,9 +16,13 @@
   }
   .projects ul li {
     list-style-type: none;
+    margin:1.5rem
   }
   .projects ul li a {
     text-decoration: none;
     color: rgb(13, 43, 13);
     cursor: pointer;
+  }
+  .projects ul li a:hover {
+    color: rgb(85, 91, 91);
   }
